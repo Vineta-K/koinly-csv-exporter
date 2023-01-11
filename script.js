@@ -86,7 +86,7 @@
            'Date',
            'Type',
            'Label',
-           'Sending Wallet'
+           'Sending Wallet',
            'Sent Amount',
            'Sent Currency',
            'Sent Cost Basis',
@@ -96,8 +96,8 @@
            'Received Currency',
            'Fee Amount',
            'Fee Currency',
-           'Gain (GBP)'.
-           'Net Value (GBP)'
+           'Gain (GBP)',
+           'Net Value (GBP)',
            'Fee Value (GBP',
            'TxSrc',
            'TxDest',
@@ -127,7 +127,7 @@
                '',
                '',       
                t.txhash,
-               t.description,
+               t.description
                // EXTRA_FIELDS: Add extra fields as necessary (ensure you also update "headings" above)
            ]
            return row.join(',');  
