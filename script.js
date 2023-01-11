@@ -84,34 +84,50 @@
         // Representing Koinly Spreadsheet (https://docs.google.com/spreadsheets/d/1dESkilY70aLlo18P3wqXR_PX1svNyAbkYiAk2tBPJng/edit#gid=0)
         const headings = [
            'Date',
+           'Type',
+           'Label',
+           'Sending Wallet'
            'Sent Amount',
            'Sent Currency',
+           'Sent Cost Basis',
+           'Receiving Wallet',
+           'Received Cost Basis',
            'Received Amount',
            'Received Currency',
            'Fee Amount',
            'Fee Currency',
-           'Net Worth Amount',
-           'Net Worth Currency',
-           'Label',
-           'Description',
+           'Gain (GBP)'.
+           'Net Value (GBP)'
+           'Fee Value (GBP',
+           'TxSrc',
+           'TxDest',
            'TxHash',
+           'Description'
            // EXTRA_HEADERS: Add extra headers as necessary (ensure you also update "row" below)
         ]
         
         transactionRows = transactions.map((t) => { 
            const row = [
                t.date,
+               t.type,
+               t.description,
+               '',
                t.from ? t.from.amount : '',
                t.from ? t.from.currency.symbol : '',
+               '',
+               '',
+               '',
                t.to ? t.to.amount : '',
                t.to ? t.to.currency.symbol : '',
                t.fee ? t.fee.amount : '',
                t.fee ? t.fee.currency.symbol : '',
+               t.gain ? t.gain : '',
                t.net_value,
-               baseCurrency,
-               t.type,
-               t.description,
+               t.fee_value ? t.fee_value : '',
+               '',
+               '',       
                t.txhash,
+               t.description,
                // EXTRA_FIELDS: Add extra fields as necessary (ensure you also update "headings" above)
            ]
            return row.join(',');  
